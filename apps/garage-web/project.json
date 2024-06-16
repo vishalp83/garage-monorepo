@@ -1,0 +1,40 @@
+{
+  "name": "garage-web",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/garage-web/src",
+  "projectType": "application",
+  "type": "module",
+  "tags": [],
+  "targets": {
+    "build": {
+      "inputs": ["production", "^production"],
+      "todo_comment": "TODO: Remove when nx fixes the externalDependency issue: https://github.com/nrwl/nx/issues/22929",
+      "defaultConfiguration": "production",
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "i18n-pull": {
+      "command": "i18nexus pull -k 0wco11bfDe_Lc58Z3zs7pw -p apps/garage-web/src/i18n/locale"
+    },
+    "i18n-push": {
+      "command": "i18nexus import apps/garage-web/src/i18n/locale/en/default.json -ns default -k 0wco11bfDe_Lc58Z3zs7pw -t e32868c4-fb8c-4861-8e54-90f366f2706b --overwrite"
+    },
+    "serve": {
+      "defaultConfiguration": "development",
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    }
+  }
+}

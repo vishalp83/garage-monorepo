@@ -1,0 +1,9 @@
+{
+  "current_date": "Current Date is {{date, DATE_HUGE}}",
+  "description.part1": "This is a simple example.",
+  "description.part2": "😉",
+  "test": "testing this tool 2",
+  "title": "Welcome {{name}}, to react using react-i18next fully type-safe",
+  "userMessagesUnread_one": "You have {{count}} unread message.",
+  "userMessagesUnread_other": "You have {{count}} unread messages."
+}
