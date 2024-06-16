@@ -7,16 +7,16 @@
         {
             "type": "msedge",
             "request": "launch",
-            "name": "Debug wevise-web Edge",
+            "name": "Debug garage-web Edge",
             "url": "http://localhost:4200",
-            "webRoot": "${workspaceFolder}/apps/wevise-web"
+            "webRoot": "${workspaceFolder}/apps/garage-web"
         },
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Debug wevise-web Chrome",
+            "name": "Debug garage-web Chrome",
             "url": "http://localhost:4200",
-            "webRoot": "${workspaceFolder}/apps/wevise-web"
+            "webRoot": "${workspaceFolder}/apps/garage-web"
         },
 
     ]
