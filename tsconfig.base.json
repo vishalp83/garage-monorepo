@@ -16,7 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@wevise/ui-components": ["libs/shared/ui-components/src/index.ts"]
+      "@garage/ui-components": ["libs/shared/ui-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

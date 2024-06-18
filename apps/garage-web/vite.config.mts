@@ -5,7 +5,7 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/apps/wevise-web',
+  cacheDir: '../../node_modules/.vite/apps/garage-web',
 
   envDir: './environments',
 
@@ -27,7 +27,7 @@ export default defineConfig({
   // },
 
   build: {
-    outDir: '../../dist/apps/wevise-web',
+    outDir: '../../dist/apps/garage-web',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -44,7 +44,7 @@ export default defineConfig({
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/apps/wevise-web',
+      reportsDirectory: '../../coverage/apps/garage-web',
       provider: 'v8',
     },
   },

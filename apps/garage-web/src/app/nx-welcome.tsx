@@ -1,4 +1,4 @@
-import { WButton, WTextField } from '@wevise/ui-components';
+import { WButton, WTextField } from '@garage/ui-components';
 const env: ImportMetaEnv = import.meta.env;
 /*
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
