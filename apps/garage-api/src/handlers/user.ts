@@ -1,4 +1,4 @@
-import { Handler, HttpVerb } from "@garage/api/ts-express-api";
+import { Handler, HttpVerb } from "@garage/ts-express-api";
 import { AuthTokenPayload, UserLookupInputModel, UserLookupResponseModel } from "../models";
 import { ValidationChain } from "express-validator";
 import { param, query } from "express-validator";

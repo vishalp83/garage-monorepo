@@ -1,4 +1,4 @@
-import { appFactory } from '@garage/api/ts-express-api';
+import { appFactory } from '@garage/ts-express-api';
 import { Application } from 'express';
 import pino from 'pino';
 import { UserHandler } from './handlers/user';
