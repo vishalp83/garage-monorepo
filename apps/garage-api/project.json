@@ -1,0 +1,56 @@
+{
+  "name": "garage-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/garage-api/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/garage-api",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/garage-api/src/main.ts",
+        "tsConfig": "apps/garage-api/tsconfig.app.json",
+        "assets": ["apps/garage-api/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "garage-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "garage-api:build:development"
+        },
+        "production": {
+          "buildTarget": "garage-api:build:production"
+        }
+      }
+    }
+  }
+}

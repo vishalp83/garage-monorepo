@@ -1,0 +1,10 @@
+{
+  "name": "@garage/api/ts-express-api",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "typings": "./index.d.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {}
+}

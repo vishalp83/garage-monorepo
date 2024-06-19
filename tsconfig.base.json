@@ -16,6 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@garage/api/ts-express-api": ["libs/api/ts-express-api/src/index.ts"],
       "@garage/ui-components": ["libs/shared/ui-components/src/index.ts"]
     }
   },
