@@ -5,8 +5,52 @@ import { param } from "express-validator";
 import { User, UserRepository } from "@garage/database";
 
 
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       required:
+ *         - id
+ *         - firstName
+ *         - lastName
+ *       properties:
+ *         id:
+ *           type: int
+ *           description: The auto-generated id of the book
+ *         firstName:
+ *           type: string
+ *           description: User's First Name
+ *         lastName:
+ *           type: string
+ *           description: User's Last Name
+ *       example:
+ *         id: d5fE_asz
+ *         firstName: John
+ *         lastName: Doe
+ */
 
 
+
+/**
+ * @openapi
+ * tags:
+ *   name: User
+ *   description: User enpoints allow you to get and modify users.
+ * /user/{id}:
+ *   get:
+ *     tags: [User]
+ *     summary: Get user info for given id
+ *     description: longer description when box is open
+ *     responses:
+ *       200:
+ *         description: Returns a User Object.
+ *         contents:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/User'
+ */
 export class UserHandler extends Handler <
  UserLookupInputModel,
  UserLookupResponseModel,

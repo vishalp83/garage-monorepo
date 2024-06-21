@@ -11,6 +11,8 @@
     "@prisma/client": "^5.15.1",
     "@storybook/test": "^8.1.9",
     "@types/luxon": "^3.4.2",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.6",
     "express": "~4.18.1",
     "express-jwt": "^8.4.1",
     "express-validator": "^7.1.0",
@@ -23,6 +25,8 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-i18next": "^14.1.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
