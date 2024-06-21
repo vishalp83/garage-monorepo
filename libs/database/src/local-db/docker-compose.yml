@@ -1,0 +1,23 @@
+# Use postgres/example user/password credentials
+version: '3.9'
+
+services:
+  garage-db:
+    container_name: garage-db
+    image: postgres
+    restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    # or set shared memory limit when deploy via swarm stack
+    volumes:
+      - garage-db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: root
+      POSTGRES_DB: garage
+    ports:
+      - '5432:5432'
+
+volumes:
+  garage-db:
+    driver: local

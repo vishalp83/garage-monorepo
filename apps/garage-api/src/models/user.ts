@@ -1,12 +1,13 @@
 
 
 export interface UserLookupInputModel {
-    UserId: string,
+    userId: string,
 }
 
 
 export interface UserLookupResponseModel {
-    UserId: string,
-    FirstName: string,
-    LastName: string
+    userId: string,
+    firstName: string,
+    lastName: string
+
 }

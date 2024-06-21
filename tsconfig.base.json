@@ -16,6 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@garage/database": ["libs/database/src/index.ts"],
       "@garage/ts-express-api": ["libs/ts-express-api/src/index.ts"],
       "@garage/ui-components": ["libs/ui-components/src/index.ts"]
     }

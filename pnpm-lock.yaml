@@ -17,6 +17,9 @@ importers:
       '@mui/material':
         specifier: ^5.15.15
         version: 5.15.15(@emotion/react@11.11.4(@types/react@18.3.1)(react@18.3.1))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react@18.3.1))(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@prisma/client':
+        specifier: ^5.15.1
+        version: 5.15.1(prisma@5.15.1)
       '@storybook/test':
         specifier: ^8.1.9
         version: 8.1.9(@jest/globals@29.7.0)(jest@29.7.0(@types/node@18.16.9)(babel-plugin-macros@3.1.0)(ts-node@10.9.1(@swc/core@1.5.7(@swc/helpers@0.5.11))(@types/node@18.16.9)(typescript@5.4.5)))(vitest@1.5.0(@types/node@18.16.9)(@vitest/ui@1.5.0)(jsdom@22.1.0)(terser@5.30.4))
@@ -1666,6 +1669,15 @@ packages:
 
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+
+  '@prisma/client@5.15.1':
+    resolution: {integrity: sha512-fmZRGmsUJ9+VwC/AvfP/PwdpD0xAEyPvNsD9/B3+GYpETq9VejVRT3PiqNvl76q1uYYzNZeo8u/LmzzTetHSEg==}
+    engines: {node: '>=16.13'}
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
 
   '@prisma/debug@5.15.1':
     resolution: {integrity: sha512-NQjdEplhXEcPvf84ghxExC+LD+iTimbg3sZvA3BhybVQIocBEBxFf9GTHhmRVPmjrWoBaYJBVgEEBXZT27JTbQ==}
@@ -9692,6 +9704,10 @@ snapshots:
   '@polka/url@1.0.0-next.25': {}
 
   '@popperjs/core@2.11.8': {}
+
+  '@prisma/client@5.15.1(prisma@5.15.1)':
+    optionalDependencies:
+      prisma: 5.15.1
 
   '@prisma/debug@5.15.1': {}
 

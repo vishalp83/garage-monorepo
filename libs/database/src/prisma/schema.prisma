@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Garage {
+  id          BigInt    @id @default(autoincrement())
+  uuid        String    @unique(map: "garages_uuid_unique") @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  user_id     BigInt
+  name        String?
+  description String?
+  image_url   String?
+  created_at  DateTime  @default(now()) @db.Timestamptz(6)
+  updated_at  DateTime  @default(now()) @db.Timestamptz(6)
+  users       User      @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: Restrict)
+  vehicles    Vehicle[]
+
+  @@map("garages")
+}
+
+model GloveBox {
+  id            Int      @id @default(autoincrement())
+  uuid          String   @unique(map: "glove_box_uuid_unique") @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name          String?
+  description   String?
+  document_type Int?
+  document_url  String?
+  user_id       BigInt
+  created_at    DateTime @default(now()) @db.Timestamptz(6)
+  users         User     @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@map("glove_box")
+}
+
+model User {
+  id                BigInt     @id @default(autoincrement())
+  uuid              String     @unique(map: "users_uuid_unique") @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  created_at        DateTime   @default(now()) @db.Timestamptz(6)
+  updated_at        DateTime   @default(now()) @db.Timestamptz(6)
+  first_name        String
+  last_name         String?
+  email             String     @unique(map: "users_email_unique")
+  provider          Int        @db.SmallInt
+  provder_id        String?
+  profile_image_url String?
+  city              String?
+  state             String?
+  country           String?    @db.VarChar(3)
+  gender            Int?       @db.SmallInt
+  handle            String?    @unique(map: "users_handle_unique")
+  garages           Garage[]
+  glove_box         GloveBox[]
+  mods              Mod[]
+  vehicles          Vehicle[]
+
+  @@map("users")
+}
+
+model Vehicle {
+  id         BigInt   @id @default(autoincrement())
+  uuid       String   @unique(map: "vehicles_uuid_unique") @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  updated_at DateTime @default(now()) @db.Timestamptz(6)
+  vin        String   @unique(map: "vehicles_vin_unique")
+  garage_id  BigInt
+  user_id    BigInt
+  data       Json?
+  short_code String   @unique(map: "vehicles_short_code_unique")
+  name       String?
+  image_urls Json?
+  mods       Mod[]
+  garages    Garage   @relation(fields: [garage_id], references: [id], onDelete: NoAction, onUpdate: Restrict)
+  users      User     @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: Restrict)
+
+  @@map("vehicles")
+}
+
+model Mod {
+  id            BigInt   @id @default(autoincrement())
+  uuid          String   @unique(map: "mods_uuid_unique") @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  vehicle_id    BigInt
+  user_id       BigInt
+  total_cost    Decimal? @db.Decimal
+  material_cost Decimal? @db.Decimal
+  labor_cost    Decimal? @db.Decimal
+  name          String?
+  description   String?
+  color         String?
+  category      Int?
+  image_urls    Json?
+  created_at    DateTime @default(now()) @db.Timestamptz(6)
+  updated_at    DateTime @default(now()) @db.Timestamptz(6)
+  users         User     @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  vehicles      Vehicle  @relation(fields: [vehicle_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@map("mods")
+}
