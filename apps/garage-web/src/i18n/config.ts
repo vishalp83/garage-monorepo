@@ -1,11 +1,11 @@
-import i18next from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import en from './locale/en/default.json';
-import es from './locale/es/default.json';
-import { DateTime } from 'luxon';
+import i18next from "i18next";
+import { initReactI18next } from "react-i18next";
+import en from "./locale/en/default.json";
+import es from "./locale/es/default.json";
+import { DateTime } from "luxon";
 
 i18next.use(initReactI18next).init({
-  fallbackLng: 'en',
+  fallbackLng: "en",
   debug: true,
   resources: {
     en: {
@@ -24,7 +24,7 @@ i18next.use(initReactI18next).init({
 });
 
 i18next.services.formatter?.add(
-  'DATE_HUGE',
+  "DATE_HUGE",
   (
     value: Date | undefined,
     lng: string | undefined,

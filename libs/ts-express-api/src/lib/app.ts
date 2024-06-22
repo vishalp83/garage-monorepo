@@ -30,7 +30,7 @@ export function appFactory(opts?: Partial<Options>) {
         ],
         censor: "***SENSITIVE***",
       },
-    }),
+    })
   );
 
   // JSON Body Parser
@@ -63,7 +63,7 @@ export function appFactory(opts?: Partial<Options>) {
     console.log(
       `[${handler.method}] ${
         handler.requiresAuth ? "\tw/auth\t" : "\t\t"
-      } ${apiPrefix}${handler.path} `,
+      } ${apiPrefix}${handler.path} `
     );
 
     // Bind the handler to the router
@@ -94,6 +94,6 @@ function getHealthcheckRouter(path: string) {
 
   // Healthcheck route
   router.get(path, (_, res) => res.status(200).send("OK"));
-  
+
   return router;
 }

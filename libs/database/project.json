@@ -7,16 +7,16 @@
   "// targets": "to see all targets run: nx show project database --web",
   "targets": {
     "db-pull": {
-        "executor": "nx:run-commands",
-        "options": {
-          "command": "npx prisma db pull --schema=libs/database/src/prisma/schema.prisma"
-        }
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx prisma db pull --schema=libs/database/src/prisma/schema.prisma"
+      }
     },
     "db-generate-client": {
-        "executor": "nx:run-commands",
-        "options": {
-          "command": "npx prisma generate --schema=libs/database/src/prisma/schema.prisma"
-        }
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx prisma generate --schema=libs/database/src/prisma/schema.prisma"
+      }
     }
   }
 }

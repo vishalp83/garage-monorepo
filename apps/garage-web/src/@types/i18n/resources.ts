@@ -1,4 +1,4 @@
-import en from '../../i18n/locale/en/default.json';
+import en from "../../i18n/locale/en/default.json";
 
 const resources = {
   en,

@@ -1,6 +1,6 @@
 // import NxWelcome from './nx-welcome';
-import '../i18n/config';
-import { useTranslation, Trans } from 'react-i18next';
+import "../i18n/config";
+import { useTranslation, Trans } from "react-i18next";
 
 export function App() {
   const { t, i18n } = useTranslation();
@@ -16,19 +16,18 @@ export function App() {
 
   return (
     <div className="App">
-      <p>{t('title', { name: 'John' })}</p>
-      <p>{t('description.part1')}</p>
-      <p>{t('description.part2')}</p>
-      <p>{t('current_date', { date: new Date() })}</p>
+      <p>{t("title", { name: "John" })}</p>
+      <p>{t("description.part1")}</p>
+      <p>{t("description.part2")}</p>
+      <p>{t("current_date", { date: new Date() })}</p>
       <Trans i18nKey="userMessagesUnread" count={count}>
-        {t('userMessagesUnread_one', { count: count })}
+        {t("userMessagesUnread_one", { count: count })}
       </Trans>
 
       <select
         className="custom-select"
         style={{ width: 200 }}
-        onChange={onClickLanguageChange}
-      >
+        onChange={onClickLanguageChange}>
         <option value="en">English</option>
         <option value="es">Spanish</option>
       </select>

@@ -1,18 +1,18 @@
 /// <reference types='vitest' />
-import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
-import * as path from 'path';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
+import * as path from "path";
+import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../../node_modules/.vite/libs/api/ts-express-api',
+  cacheDir: "../../../node_modules/.vite/libs/api/ts-express-api",
 
   plugins: [
     nxViteTsPaths(),
     dts({
-      entryRoot: 'src',
-      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+      entryRoot: "src",
+      tsconfigPath: path.join(__dirname, "tsconfig.lib.json"),
     }),
   ],
 
@@ -24,7 +24,7 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    outDir: '../../../dist/libs/api/ts-express-api',
+    outDir: "../../../dist/libs/api/ts-express-api",
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
@@ -32,12 +32,12 @@ export default defineConfig({
     },
     lib: {
       // Could also be a dictionary or array of multiple entry points.
-      entry: 'src/index.ts',
-      name: 'api--ts-express-api',
-      fileName: 'index',
+      entry: "src/index.ts",
+      name: "api--ts-express-api",
+      fileName: "index",
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
-      formats: ['es', 'cjs'],
+      formats: ["es", "cjs"],
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
@@ -49,15 +49,15 @@ export default defineConfig({
     watch: false,
     globals: true,
     cache: {
-      dir: '../../../node_modules/.vitest/libs/api/ts-express-api',
+      dir: "../../../node_modules/.vitest/libs/api/ts-express-api",
     },
-    environment: 'node',
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    environment: "node",
+    include: ["src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
 
-    reporters: ['default'],
+    reporters: ["default"],
     coverage: {
-      reportsDirectory: '../../../coverage/libs/api/ts-express-api',
-      provider: 'v8',
+      reportsDirectory: "../../../coverage/libs/api/ts-express-api",
+      provider: "v8",
     },
   },
 });

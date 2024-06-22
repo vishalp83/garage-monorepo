@@ -5,5 +5,9 @@
   "projectType": "library",
   "tags": [],
   "// targets": "to see all targets run: nx show project ui-components --web",
-  "targets": {}
+  "targets": {
+    "upgrade-storybook": {
+      "command": "npx storybook@latest upgrade --config-dir libs/ui-components/.storybook/"
+    }
+  }
 }

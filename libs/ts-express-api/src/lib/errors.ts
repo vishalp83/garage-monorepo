@@ -16,7 +16,7 @@ type SpreadableObject = {
  * to add a status code and a method to send the error.
  */
 export abstract class RespondableError<
-  T extends SpreadableObject,
+  T extends SpreadableObject
 > extends Error {
   /**
    * Error ID uniquely identifying this instance of error. Use for log searches.
@@ -67,7 +67,7 @@ export abstract class RespondableError<
  * Status: `500`
  */
 export class UnexpectedError<
-  T extends SpreadableObject,
+  T extends SpreadableObject
 > extends RespondableError<T> {
   readonly errorCode: ErrorCode = ErrorCode.UnexpectedError;
   readonly status: number = 500;
@@ -119,7 +119,7 @@ export function handleRespondableErrors<T extends SpreadableObject>(
   err: Error | RespondableError<T>,
   req: Request,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ): void {
   if (err instanceof RespondableError) {
     err.respond(res);
